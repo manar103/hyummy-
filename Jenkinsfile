@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                cleanWs()
                 git branch: 'main', url: 'https://github.com/manar103/hyummy-.git'
             }
         }
