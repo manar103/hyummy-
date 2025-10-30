@@ -17,7 +17,9 @@ pipeline {
             steps {
                 bat 'git config user.email "me5291486@gmail.com"'
                 bat 'git config user.name "manar103"'
-                bat 'npm run deploy'
+                withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GH_TOKEN')]) {
+                    bat 'npm run deploy'
+                }
             }
         }
     }
