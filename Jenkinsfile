@@ -17,10 +17,7 @@ pipeline {
             steps {
                 bat 'git config user.email "me5291486@gmail.com"'
                 bat 'git config user.name "manar103"'
-                withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GH_TOKEN')]) {
-                    bat 'git remote set-url origin https://manar103:${GH_TOKEN}@github.com/manar103/hyummy-.git'
-                    bat 'npm run deploy'
-                }
+                bat 'git push https://manar103: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@github.com/manar103/hyummy-.git gh-pages'
             }
         }
     }
